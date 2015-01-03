@@ -223,6 +223,7 @@ define GstBuildLibrary
   $$(eval $$(call BuildPackage,libgst1$(1)))
 endef
 
+$(eval $(call GstBuildLibrary,allocators,allocators,,))
 $(eval $(call GstBuildLibrary,app,app,,))
 $(eval $(call GstBuildLibrary,audio,audio,tag,))
 $(eval $(call GstBuildLibrary,fft,FFT,,))
