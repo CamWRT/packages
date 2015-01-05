@@ -167,8 +167,6 @@ CONFIGURE_ARGS += \
 	--without-libintl-prefix \
 	--without-x \
 
-TARGET_CFLAGS+= -std=gnu99
-
 EXTRA_LDFLAGS+= \
 	-Wl,-rpath-link=$(STAGING_DIR)/usr/lib \
 	$(if $(ICONV_FULL),-liconv) \
@@ -213,6 +211,8 @@ endef
 
 $(eval $(call GstBuildLibrary,photography,photography,,))
 $(eval $(call GstBuildLibrary,basecamerabinsrc,basecamerabinsrc,app,))
+$(eval $(call GstBuildLibrary,codecparsers,codecparsers,,))
+$(eval $(call GstBuildLibrary,mpegts,mpegts,video,))
 
 # 1: short name
 # 2: description
@@ -266,8 +266,8 @@ $(eval $(call GstBuildPlugin,jpegformat,jpegformat support,tag,,))
 $(eval $(call GstBuildPlugin,liveadder,liveadder support,audio,,))
 $(eval $(call GstBuildPlugin,mpegpsdemux,mpegpsdemux support,pbutils tag,,))
 $(eval $(call GstBuildPlugin,mpegpsmux,mpegpsmux support,,,))
-#$(eval $(call GstBuildPlugin,mpegtsdemux,mpegtsdemux support,mpegts pbutils tag,,))
-#$(eval $(call GstBuildPlugin,mpegtsmux,mpegtsmux support,video,,))
+$(eval $(call GstBuildPlugin,mpegtsdemux,mpegtsdemux support,codecparsers mpegts pbutils tag,,))
+$(eval $(call GstBuildPlugin,mpegtsmux,mpegtsmux support,codecparsers mpegts video tag,,))
 $(eval $(call GstBuildPlugin,mxf,mxf support,audio video,,))
 $(eval $(call GstBuildPlugin,pcapparse,pcapparse support,,,))
 $(eval $(call GstBuildPlugin,pnm,pnm support,video,,))

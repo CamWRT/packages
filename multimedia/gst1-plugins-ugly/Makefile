@@ -22,11 +22,6 @@ PKG_SOURCE_URL:=http://gstreamer.freedesktop.org/src/gst-plugins-ugly/
 PKG_MD5SUM:=6954beed7bb9a93e426dee543ff46393
 
 PKG_BUILD_DEPENDS:= libgstreamer1 gstreamer1-plugins-base liboil
-PKG_CONFIG_DEPENDS:= \
-	CONFIG_PACKAGE_gst1-mod-asf \
-	CONFIG_PACKAGE_gst1-mod-lame \
-	CONFIG_PACKAGE_gst1-mod-mad \
-	CONFIG_PACKAGE_gst1-mod-mpeg2dec \
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1

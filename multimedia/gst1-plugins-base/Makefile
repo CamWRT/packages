@@ -22,21 +22,6 @@ PKG_SOURCE_URL:=http://gstreamer.freedesktop.org/src/gst-plugins-base/
 PKG_MD5SUM:=357165af625c0ca353ab47c5d843920e
 
 PKG_BUILD_DEPENDS:= libgstreamer1 liboil
-PKG_CONFIG_DEPENDS:= \
-	CONFIG_PACKAGE_gst1-mod-alsa \
-	CONFIG_PACKAGE_gst1-mod-app \
-	CONFIG_PACKAGE_gst1-mod-audioconvert \
-	CONFIG_PACKAGE_gst1-mod-audiorate \
-	CONFIG_PACKAGE_gst1-mod-audioresample \
-	CONFIG_PACKAGE_gst1-mod-audiotestsrc \
-	CONFIG_PACKAGE_gst1-mod-gio \
-	CONFIG_PACKAGE_gst1-mod-ogg \
-	CONFIG_PACKAGE_gst1-mod-tcp \
-	CONFIG_PACKAGE_gst1-mod-theora \
-	CONFIG_PACKAGE_gst1-mod-videotestsrc \
-	CONFIG_PACKAGE_gst1-mod-volume \
-	CONFIG_PACKAGE_gst1-mod-vorbis \
-	CONFIG_PACKAGE_libgst1app \
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
@@ -129,7 +114,6 @@ CONFIGURE_ARGS += \
 	--disable-freetypetest \
 	$(call GST_COND_SELECT,gio) \
 	--disable-gnome_vfs \
-	--disable-gst_v4l \
 	--disable-libvisual \
 	$(call GST_COND_SELECT,ogg) \
 	--disable-oggtest \
